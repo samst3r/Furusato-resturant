@@ -1,24 +1,7 @@
-import {
-  animate,
-  utils,
-  createDraggable,
-  spring,
-  svg,
-  stagger,
-  splitText,
-} from "https://esm.sh/animejs";
-
-animate("#form", {
-  height: [{ to: ["0%", "100%"] }],
-  loopDelay: 250,
-  ease: "inOutBack(1.7)",
-});
-
 document.addEventListener("DOMContentLoaded", (event) => {
   form.addEventListener("submit", getFormData);
   timeInit();
 });
-let initalTime = false;
 let reservationTimes = [
   "9:00 AM",
   "9:15 AM",
@@ -78,7 +61,6 @@ function timeInit() {
     const selection = document.querySelector("#timeInput");
     selection.add(option);
   }
-  initalTime = true;
 }
 
 document.querySelector("#dateInput").min = new Date()
@@ -91,6 +73,16 @@ maxDate.setDate(maxDate.getDate() + 20);
 console.log(maxDate);
 document.querySelector("#dateInput").max = maxDate.toISOString().split("T")[0];
 
+function number() {
+  let partyInputValue = document.querySelector("#sizeInput").value;
+  if (partyInputValue > 15) {
+    let sizeInput = document.querySelector("#sizeInput");
+    sizeInput.value = 15;
+  }
+}
+function test() {
+  console.log("domer");
+}
 let reservationInfo = [];
 
 let form = document.querySelector("form");
@@ -98,7 +90,6 @@ form.addEventListener("submit", getFormData);
 
 function getFormData(event) {
   event.preventDefault();
-  formatPopUp();
   let date = document.querySelector("#dateInput").value;
   let time = document.querySelector("#timeInput").value;
   let size = document.querySelector("#sizeInput").value;
@@ -110,13 +101,3 @@ function getFormData(event) {
     console.log(reservationInfo[i]);
   }
 }
-
-function formatPopUp() {
-  $(".popup-message").html("Reserrvation completed!<br>Thank you!");
-  $(".popup-confirmation").fadeIn("slow");
-}
-
-$("#popup-button").on("click", function () {
-  console.log("clicked");
-  $(".popup-confirmation").fadeOut("slow");
-});
