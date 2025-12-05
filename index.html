@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="images/ramen_favicon.png" />
+    <title>Furusato</title>
+  </head>
+  <body>
+    <nav>
+      <div id="nav-left">
+        <a href="./reserve.html"> <h1 id="nav-text0">Reserve a seat</h1></a>
+      </div>
+      <div id="nav-center">
+        <a href="./index.html"
+          ><img id="nav-icon-desktop" src="images\svg ramen template 2.svg"
+        /></a>
+      </div>
+      <div id="nav-right">
+        <div id="nav-right-sub-layer-1">
+          <h1 id="nav-text1">Menu</h1>
+          <a href="./about_us.html"> <h1 id="nav-text2">About us</h1></a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div id="grid">
+        <h1 id="Furusato-title">Furusato</h1>
+        <div id="main">
+          <img
+            id="main-ramen-SVG"
+            src="images/svg ramen template 2.svg"
+            alt="Ramen Main Icon"
+          />
+        </div>
+        <p id="description-text">Ramen that feels like home</p>
+      </div>
+    </main>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./nav.js"></script>
+  </body>
+</html>

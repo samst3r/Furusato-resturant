@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reserve.css" />
+    <title>Furusato</title>
+    <link rel="icon" type="image/x-icon" href="images/ramen_favicon.png" />
+  </head>
+  <body>
+    <nav>
+      <div id="nav-left">
+        <a href="./reserve.html"><h1 id="nav-text0">Reserve a seat</h1></a>
+      </div>
+      <div id="nav-center">
+        <a href="./index.html"
+          ><img id="nav-icon-desktop" src="images\svg ramen template 2.svg"
+        /></a>
+      </div>
+      <div id="nav-right">
+        <div id="nav-right-sub-layer-1">
+          <h1 id="nav-text1">Menu</h1>
+          <a href="./about_us.html"> <h1 id="nav-text2">About us</h1></a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div id="grid">
+        <form id="form">
+          <h1 id="reservation-Title">Reservation</h1>
+          <label id="dateLabel" for="dateInput">Date:</label>
+          <input type="date" id="dateInput" required />
+          <label id="timeLabel" for="timeInput">Time:</label>
+          <select name="timeInput" id="timeInput"></select>
+          <label id="sizeLabel" for="sizeInput">Party Size:</label>
+          <input
+            id="sizeInput"
+            type="number"
+            min="0"
+            max="15"
+            placeholder="0-15"
+            oninput="number()"
+            required
+          />
+
+          <label id="emailLabel" for="eMail">Email:</label>
+          <input
+            type="email"
+            id="eMail"
+            placeholder="example@gmail.com"
+            pattern="[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" id="submitButton">submit</button>
+        </form>
+        <div class="popup-confirmation">
+          <p class="popup-message">Reserrvation completed!<br />Thank you!</p>
+          <div>
+            <button id="popup-button">continue</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./reserve.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="nav.js"></script>
+    <script>
+      function number() {
+        let partyInputValue = document.querySelector("#sizeInput").value;
+        if (partyInputValue > 15) {
+          let sizeInput = document.querySelector("#sizeInput");
+          sizeInput.value = 15;
+        }
+      }
+      function test() {
+        console.log("domer");
+      }
+    </script>
+  </body>
+</html>
